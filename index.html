@@ -1,173 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TUYISENGE Jean Chrisostom - CV</title>
+  <meta charset="UTF-8">
+  <title>Welcome to TUYISENGE Jean Chrisostom's CV</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #f0fff0, #e0ffe0);
       margin: 0;
       padding: 0;
-    }
-
-    .cv-container {
-      max-width: 900px;
-      margin: 40px auto;
-      background-color: white;
-      border-radius: 12px;
-      padding: 40px;
-      box-shadow: 0 0 25px rgba(46,139,87,0.3);
-      border: 4px double #2e8b57;
-      transition: transform 0.3s ease;
-      animation: fadeSlide 1s ease forwards;
-    }
-
-    .cv-container:hover {
-      transform: scale(1.02);
-    }
-
-    @keyframes fadeSlide {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    h1, h2 {
+      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      color: darkgreen;
-      margin-top: 0;
+      background: 
+        linear-gradient(120deg, rgba(44,83,100,0.85), rgba(32,58,67,0.85)),
+        url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
     }
 
-    h2 {
-      margin-top: 40px;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 10px;
-    }
-
-    p, li {
-      font-size: 16px;
-      line-height: 1.6;
-      color: #333;
-    }
-
-    ul {
-      padding-left: 20px;
-      list-style-type: disc;
-    }
-
-    .profile-image {
-      display: block;
-      margin: 0 auto 20px;
-      width: 160px;
-      height: 160px;
-      object-fit: cover;
+    /* Floating circles */
+    .circle {
+      position: absolute;
       border-radius: 50%;
-      border: 4px solid darkgreen;
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.13);
+      animation: float 20s linear infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+    }
+    .circle:nth-child(1) { width: 80px; height: 80px; left: 10%; animation-delay: 0s; }
+    .circle:nth-child(2) { width: 120px; height: 120px; left: 30%; animation-delay: 5s; }
+    .circle:nth-child(3) { width: 60px; height: 60px; left: 50%; animation-delay: 2s; }
+    .circle:nth-child(4) { width: 100px; height: 100px; left: 70%; animation-delay: 7s; }
+    .circle:nth-child(5) { width: 90px; height: 90px; left: 85%; animation-delay: 3s; }
+
+    h1, p {
+      z-index: 1;
+      text-shadow: 1px 1px 8px #222;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      max-width: 600px;
     }
 
-    .contact-info {
-      text-align: center;
-      margin-bottom: 20px;
+    .form-container {
+      background: rgba(255,255,255,0.18);
+      box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.25);
+      width: 100%;
+      max-width: 500px;
+      padding: 30px 25px;
+      text-align: left;
+      color: #222;
+      position: relative;
+      z-index: 1;
     }
 
-    .contact-info a {
-      color: #2e8b57;
-      text-decoration: none;
+    label {
       font-weight: bold;
+      display: block;
+      margin: 15px 0 5px;
+      color: #2c5364;
     }
 
-    .social-links {
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #b2bec3;
+      border-radius: 8px;
+      font-size: 16px;
+      background: rgba(255,255,255,0.85);
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #2c5364;
+      box-shadow: 0 0 8px rgba(44,83,100,0.3);
+      outline: none;
+    }
+
+    .custom-button {
+      width: 100%;
+      background: linear-gradient(90deg, #28a745, #218838);
+      color: white;
+      padding: 12px;
       text-align: center;
-      margin-top: 20px;
-    }
-
-    .social-links a {
-      display: inline-block;
-      margin: 10px;
-      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 18px;
       font-weight: bold;
-      text-decoration: none;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
+      transition: background 0.3s ease;
+      border: none;
+      cursor: pointer;
+      margin-top: 10px;
     }
 
-    .social-links a.instagram {
-      background-color: #E1306C;
-      color: white;
+    .custom-button:hover {
+      background: linear-gradient(90deg, #218838, #28a745);
     }
 
-    .social-links a.facebook {
-      background-color: #4267B2;
-      color: white;
+    @media screen and (max-width: 600px) {
+      h1 { font-size: 26px; }
+      .form-container { padding: 20px; }
     }
 
-    .social-links a:hover {
-      opacity: 0.8;
+    /* Spinner Overlay */
+    .spinner-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease;
+    }
+
+    .spinner-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .spinner {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #28a745;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
   </style>
 </head>
 <body>
-  <div class="cv-container">
-    <img src='https://i.postimg.cc/2b6dF0Tg/chrisostom.jpg' alt='Chrisostom' class="profile-image">
+
+  <!-- Floating Background Circles -->
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+
+  <!-- Welcome Form -->
+  <h1>Before Entering My Official CV</h1>
+  <p>Welcome to the world of <strong>TUYISENGE Jean Chrisostom</strong>, known online as <em>BLAD</em>. Just a few fun questions before you dive in!</p>
+
+  <form class="form-container" id="welcomeForm">
+    <label for="nickname">Your Fun Nickname:</label>
+    <input type="text" id="nickname" name="nickname" placeholder="e.g. KingOfFire" required>
+
+    <label for="favorite-color">Favorite Color:</label>
+    <select id="favorite-color" name="favorite-color" required>
+      <option value="">Choose one...</option>
+      <option value="Green">Green</option>
+      <option value="Blue">Blue</option>
+      <option value="Pink">Pink</option>
+      <option value="Black">Black</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <label for="shoutout">What's on your mind?</label>
+    <input type="text" id="shoutout" name="shoutout" placeholder="Type any thought or vibe..." required>
+
+    <label for="address">Where Are You From (village, cell, district...)?</label>
+    <input type="text" id="address" name="address" placeholder="E.g. Kanzenze, Ntarama, Bugesera" required>
     
-    <h1>TUYISENGE Jean Chrisostom</h1>
+    <button type="submit" class="custom-button">Enter</button>
+  </form>
 
-    <div class="contact-info">
-      <p><strong>Phone:</strong> 0796717230<br>
-         <strong>Email:</strong> <a href="mailto:tuyisengejeanchrisostome@gmail.com">tuyisengejeanchrisostome@gmail.com</a><br>
-         <strong>Location:</strong> Karumuna Village, Kanzenze Cell, Ntarama Sector, Bugesera District<br>
-         <strong>Birthday:</strong> 27/09/2006<br>
-         <strong>Nationality:</strong> Rwandan<br>
-         <strong>National ID:</strong> 1200680292905036</p>
-    </div>
-
-    <h2>Connect with Me</h2>
-    <div class="social-links">
-      <a href="https://www.instagram.com/blad_danger/" target="_blank" class="instagram">📷 Instagram</a>
-      <a href="https://www.facebook.com/tuyisengejeanchrisostom" target="_blank" class="facebook">📘 Facebook</a>
-    </div>
-
-    <h2>Personal Statement</h2>
-    <p>I am a hardworking and disciplined student teacher with strong communication skills and a passion for language education. Currently pursuing a Diploma in Language Education at TTC Matimba, I aim to become an impactful teacher who inspires students and supports Rwanda’s educational development.</p>
-
-    <h2>Education</h2>
-    <ul>
-      <li><strong>TTC Matimba</strong> (2024–Present) – Diploma in Language Education</li>
-      <li><strong>G.S NYIRARUKOBWA</strong> (2022–2023) – O'Level Certificate (Aggregate: 48 – A)</li>
-      <li><strong>INGENZI TRINITY SCHOOL</strong> (2021) – Completed Senior 1</li>
-      <li><strong>G.S NYIRARUKOBWA</strong> (2010–2020) – Primary Certificate (Aggregate: 12 – A)</li>
-    </ul>
-
-    <h2>Achievements</h2>
-    <ul>
-      <li>Head Boy at GS NYIRARUKOBWA</li>
-      <li>Participant in school language competitions</li>
-      <li>Peer learning support and study group leader</li>
-    </ul>
-
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Kinyarwanda (Native), English (Proficient), French (Basic)</li>
-      <li><strong>Teaching:</strong> Creative lesson planning, student-centered methodologies, material preparation</li>
-      <li><strong>Computing:</strong> MS Office Suite, online forms, AI tools (Copilot, Gemini, ChatGPT, etc.)</li>
-      <li><strong>Soft Skills:</strong> Discipline, teamwork, creativity, problem solving</li>
-    </ul>
-
-    <h2>Interests</h2>
-    <ul>
-      <li>Reading bilingual books</li>
-      <li>Participating in educational debates and online courses</li>
-      <li>Exploring technology in education</li>
-      <li>Weekend academic planning and study</li>
-    </ul>
-
-    <h2>References</h2>
-    <ul>
-      <li><strong>NTABARONKERARIMWE SAIDATH</strong> – Parent (Phone: 0722321340)</li>
-      <li><strong>TUYIZERE JEAN MARIE VIANNEY</strong> – Brother & Teacher (Phone: 0729407012)</li>
-    </ul>
+  <!-- Spinner Overlay -->
+  <div class="spinner-overlay" id="spinnerOverlay">
+    <div class="spinner"></div>
   </div>
+
+  <script>
+    const form = document.getElementById('welcomeForm');
+    const spinner = document.getElementById('spinnerOverlay');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      spinner.classList.add('active');
+
+      setTimeout(() => {
+        spinner.classList.remove('active');
+        alert("Thanks for submitting! Welcome to my CV 😉");
+        form.reset();
+      }, 1500);
+    });
+  </script>
+
 </body>
 </html>
